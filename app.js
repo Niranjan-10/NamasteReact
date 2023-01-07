@@ -1,39 +1,45 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-/*
-Things done by parcel behind the scene 
+// This is a React Element
+const heading = React.createElement("h1", { key: "title" }, "React is Cool"); // React.createElement => object => HTML
 
-    - Hot Module Reloading
-    - File Watcher
-    - Minify
-    - Bundling
-    - Cleaning our code
-    - Dev and Production Build
-    - Image Optimization
-    - Caching while development
-    - Compression
-    - Compatble with older version of browser
-    - HTTPS on dev
-    - Consistent hashing algo
-    - Zero config
+// JSX is same as React.createElement
+// Babel understand the JSX, it's like a blackbox takes some code and spit some formatted code
 
+// JSX => React.createElement => object => HTML
+//BABEl does this convertion
+const body = (
+  <div key="body">
+    <h1>Hello People !!</h1>
+  </div>
+);
 
-Transitive dependencies:
-we have our package manager who have manage the transitive dependencies.
+// React Component
+// -Functional
+// -class based
 
-browserlist
+const InnerContent = () => <p>Inner element</p>;
 
-*/
-
-const heading = React.createElement("h1", {}, "React is Cool");
+const ComponentExample = () => (
+  //component composition - composing of components
+  <div>
+    <InnerContent />
+    <p>This is a functional component</p>
+  </div>
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(heading);
+// diff between element and component is
+// component is a function tat returns the JSX element
+// Element is a jsx variable
 
-//--------------------------> commands <----------------------------
+// To render the element we use below code
+// root.render(body);
 
-// npx parcel index.html
-// npx parcel build index.html
-// npx parcel index.html --https
+// to render the component
+root.render(<ComponentExample />);
+
+// Notes:
+// Async Defer

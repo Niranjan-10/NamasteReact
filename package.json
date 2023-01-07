@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "if the question contains k elements or k things then may be this problem can be solve using HEAP",
   "scripts": {
+    "dev": "parcel index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Niranjan",
